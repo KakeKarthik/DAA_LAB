@@ -8,7 +8,6 @@ class NQueens
 		cols = new boolean[n];
 		leftDiagonal = new boolean[2*n];
 		rightDiagonal = new boolean[2*n];
-		result = new ArrayList<>();
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		for(int i=0;i<n;i++)
 			temp.add(0);
