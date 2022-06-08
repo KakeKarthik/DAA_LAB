@@ -1,9 +1,9 @@
-import java.io.*;
 import java.util.*;
 public class DFT 
 {
 	private static LinkedList<Integer> adj[];
-	static void Dfs(int v,boolean visited[])
+	static boolean visited[];
+	static void Dfs(int v)
 	{
 		visited[v] = true;
 		System.out.print(v+" ");
@@ -12,7 +12,7 @@ public class DFT
 		{
 			int n = i.next();
 			if(!visited[n])
-				Dfs(n,visited);
+				Dfs(n);
 		}
 	}
 	public static void main(String[] args)
@@ -21,7 +21,7 @@ public class DFT
 		System.out.println("Enter no.of Edges : ");
 		int n = sc.nextInt();
 		adj = new LinkedList[n];
-		boolean visited[] = new boolean[n];
+		visited = new boolean[n];
 		for(int i=0;i<n;i++)
 			adj[i] = new LinkedList();
 		System.out.println("Enter the Edges : ");
@@ -32,8 +32,8 @@ public class DFT
 			adj[x].add(y);
 		}
 		System.out.println("Enter source vertex : ");
-		int z = sc.nextInt();
-		System.out.println("Following is Depth First Traversal (Starting from vertex "+z+" ) : ");
-		Dfs(z,visited);
+		int v = sc.nextInt();
+		System.out.println("Following is Depth First Traversal (Starting from vertex "+v+" ) : ");
+		Dfs(v);
 	}
 }
